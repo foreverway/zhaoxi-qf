@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/shoppingcar.css">
+    <link rel="stylesheet" href="../css/goodinfo.css">
+    <style>
+        #shadow1{
+        width: 300px;
+        height: 150px;
+        background-color: rgb(226, 224, 224);
+        position: fixed;
+        top: 200px;
+        left: 620px;
+        border-radius:10px;
+        display:none;
+        z-index: 99;
+        }
+
+        .ckeck {
+        width: 300px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+ 
+        background-color: rgb(45, 199, 127);
+        color:white;
+        font-size:16px;
+        
+        }
+
+        .alipay {
+        width: 120px;
+        height: 40px;
+        background-color: blue;
+        color: white;
+        font-size:18px;
+        float: left;
+          line-height: 40px;
+          text-align: center;
+           border-radius:10px;
+          margin:15px;
+        }
+
+        .wechat {
+        width: 120px;
+        height: 40px;
+         margin:15px;
+         font-size:18px;
+          border-radius:10px;
+         line-height: 40px;
+         text-align: center;
+        background-color: green;
+        color: white;
+        float: left;
+        }
+        .total{
+            background-color: silver;
+            color:white;
+          width: 200px;
+            margin:0 0 0 200px;
+              border-radius:10px;
+              text-align: center;
+        }
+        </style>
+</head>
+<body>
+    <div class="w">
+    <div class="header cl">
+        <ul class="header-left">
+            <li>首页</li>
+            <li>书店区</li>
+            <li>书摊区</li>
+            <li>艺术品专场</li>
+        </ul>
+        <ul class="header-right">
+            <li>用户名</li>
+            <li>购物车</li>
+            
+            <li>我的订单</li>
+            
+            <li>个人中心</li>
+            <li>客服</li>
+            <li>手机版</li>
+            <li>北京</li>
+        </ul>
+    </div>
+
+<div class="catbox">
+    <table id="cartTable">
+        <thead>
+            <tr>
+                <th><label>
+                <input class="check-all check allcheck" type="checkbox" />&nbsp;&nbsp;全选</label></th>
+                <th>商品</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>小计</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody class="shoptbody">  
+            <!-- <tr>
+                <td class="checkbox"><input class="check-one check" type="checkbox" /></td>
+                <td class="goods"><img src="images/4.jpg" alt="" /><span>Fujifilm/富士 instax mini 25</span></td>
+                <td class="price">640.60</td>
+                <td class="count"><span class="reduce"></span>
+                    <input class="count-input" type="text" value="1" />
+                    <span class="add">+</span></td>
+                <td class="subtotal">640.60</td>
+                <td class="operation"><span class="delete">删除</span></td>
+            </tr> -->
+        </tbody>
+    </table>
+    <div class="foot" id="foot">
+        <div class="fr closing" id="aaaa" style="background-color:red" onclick="getTotal();">合计</div>
+        <input type="hidden" id="cartTotalPrice" />
+        <div class="fr total">付款：￥<span id="priceTotal">0.00</span></div>
+        <div class="fr selected" id="selected">已选商品<span id="selectedTotal">0</span>件<span class="arrow up">︽</span><span
+                class="arrow down">︾</span></div>
+        <div class="selected-view">
+            <div id="selectedViewList" class="clearfix">
+                <div><img src="images/1.jpg"><span>取消选择</span></div>
+            </div>
+            <span class="arrow">◆<span>◆</span></span>
+        </div>
+    </div>
+</div>
+<div id="shadow1">
+    <div class="ckeck"><span class="check12"></span></div>
+    <div class="alipay">支付宝付款</div>
+    <div class="wechat">微信付款</div>
+</div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+
+     $.ajax({
+        type: "get",
+        url: "../php/updateshopcar.php",
+        // data: `id=${id}`,
+        dataType:"json",
+        success: function (list) {
+            // var list = JSON.parse(list);
+            var html = "";
+            list.forEach(function (item) {
+                var {
+                    date,
+                    storename,
+                    bookprice,
+                    bookimg,
+                     bookname,
+                      num
+                } = item;
+                //  $(".bookimg").src(bookimg);
+                html +=
+`<tr>
+    <td class="checkbox"><input class="check-one check" type="checkbox" /></td>
+    <td class="goods"><img src="../img/${bookimg}" alt="" /><span>${bookname}</span></td>
+    <td class="price">${bookprice}</td>
+    <td class="count"><span class="reduce"></span>
+        <input class="count-input" type="text" value="${num}" />
+        <span class="add">+</span></td>
+    <td class="subtotal">${bookprice}</td>
+    <td class="operation"><span class="delete">删除</span></td>
+</tr>`;
+
+
+            });
+$(".shoptbody").append(html);
+ var addList = document.getElementsByClassName("add"); //找到所有的"+"号按钮
+    // var addList = $("add");
+    console.log(addList);
+    for (var i = 0; i < addList.length; i++) {
+addList[i].onclick = function () {//给每一个按钮绑定点击事件
+            var input = previous(this);  //根据+号找到数字文本框
+            input.value = input.value * 1 + 1;
+            var reduce = previous(input); //根据input框 找到减号
+            reduce.innerHTML = "-";
+            var currentParent = this.parentNode; //找到父节点
+            var priceTd = previous(currentParent); //然后根据父节点找到单价
+            var price = priceTd.innerHTML * 1;
+            var subtotalTd = next(currentParent); //根据父节点找到小计
+            subtotalTd.innerHTML = ( price * (input.value * 1)).toFixed(2);//更新小计
+            showTotalAndPrice();
+        }}
+
+    var reduceList = document.getElementsByClassName("reduce"); //找到所有的减号
+    for (var i = 0; i < reduceList.length; i++) {
+        reduceList[i].onclick = function () {  //给每一个减号  绑定一个点击事件
+            var input = next(this);  //根据+号找到数字文本框
+   
+            if (input.value != "1") {
+                input.value = input.value * 1 - 1;  //更新文本框框
+                var currentParent = this.parentNode; //找到父节点
+                var priceTd = previous(currentParent); //然后根据父节点找到单价
+                var price = priceTd.innerHTML * 1;
+                var subtotalTd = next(currentParent); //根据父节点找到小计
+                subtotalTd.innerHTML = ( price * (input.value * 1)).toFixed(2);//更新小计
+                if (input.value == "1") { //如果数量减少到了1   那么减号不显示
+                    this.innerHTML = "";
+                }
+                showTotalAndPrice();
+            }
+        }
+    }
+
+    //全选
+    //所有样式为check的按钮的状态 都应该跟check-all的状态一样
+    var checkAll = document.getElementsByClassName("check-all")[0];
+    var check = document.getElementsByClassName("check-one");
+    checkAll.onclick = function () {
+        // $(".total").css("backgroud-color","orange")
+        for (var i = 0; i < check.length; i++) {
+            check[i].checked = this.checked;  //保持checke的状态一样
+        
+        }
+        showTotalAndPrice();
+    };
+    for (var i = 0; i < check.length; i++) {
+        check[i].onclick = function () {
+            showTotalAndPrice();
+        }
+    }
+    function showTotalAndPrice() {
+        //根据check的状态去统计所有的数量  和 小计
+        var countTotal = 0;
+        var countPrice = 0;
+        for (var i = 0; i < check.length; i++) {
+            if (check[i].checked == true) {  //如果被选中了 然后获取数量和小计 进行累加
+                //根据checkbox去找数量和小计
+                //先找到tr  然后根据tr再去找td
+                var tr = check[i].parentNode.parentNode; //checkbox的 父辈的父辈
+                //然后在根据tr去找里面的子元素(td)
+//                var count = tr.children[3].children[1].value * 1;
+                //
+//                var count  = tr.getElementsByClassName("count-input")[0].value *1;
+                var count  = tr.getElementsByTagName("input")[1].value *1;
+                countTotal += count;  //数量更新
+                var price = tr.children[4].innerHTML * 1;
+                countPrice += price;
+            }
+        }
+        document.getElementById("selectedTotal").innerHTML = countTotal;
+        document.getElementById("priceTotal").innerHTML = countPrice.toFixed(2);
+    }
+    var deleteTr = document.getElementsByClassName("delete"); //删除
+    for (var i = 0; i < deleteTr.length; i++) {
+        deleteTr[i].onclick = function () { //每个删除事件  把tr从 table中删掉
+//            table.removeChild(tr);
+            var tr = this.parentNode.parentNode;
+            var table = tr.parentNode;
+            table.removeChild(tr);
+            showTotalAndPrice();
+        }
+    }
+    var deleteAll = document.getElementById("deleteAll");
+    deleteAll.onclick = function () {
+        for (var i = 0; i < check.length; i++) {
+            if (check[i].checked) {
+                var tr = check[i].parentNode.parentNode;
+                var table = tr.parentNode;
+                table.removeChild(tr);
+                i--;
+            }
+        }
+        showTotalAndPrice();
+    }
+    //查找指定元素的上一个兄弟节点
+    function previous(ele) {
+        if (ele.previousElementSibling) {
+            return ele.previousElementSibling;
+        } else {
+            return ele.previousSibling;
+        }
+    }
+    //查找指定元素的下一个兄弟节点
+    function next(ele) {
+        if (ele.nextElementSibling) {
+            return ele.nextElementSibling;
+        } else {
+            return ele.nextSibling;
+        }
+    }
+        },
+    });
+     $(".total").on("click",function(){
+         var mach=$("#priceTotal").html();
+         $(".check12").replaceWith("一共"+mach+"元");
+         $("#shadow1").css("display","block")
+    //  alert("一共"+$("#priceTotal").html())
+     })
+       $(".alipay").on("click",function(){
+       $("#shadow1").css("display","none")
+       alert("感谢您的支持")
+
+       })
+         $(".wechat").on("click",function(){
+         $("#shadow1").css("display","none")
+         alert("感谢您的支持")
+
+         })
+        
+    // })
+     //因为+号的样式都一样  并且都执行一样的操作  所以要对每一个加号绑定相同的事件
+    //点击加号 获取相邻的上一个元素(input) 然后把你们的值 +1  然后显示-号
+    // 获取单价  然后与数量进行操作  最后更新小计
+    
+</script>
+</html>

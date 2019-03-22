@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="../css/goodinfo.css">
+    <style>
+        
+        .shoppngshow{
+            font-size: 16px;
+            color:white;
+        }
+        .shoppngshow{
+            position:fixed;
+            right:350px;
+            top:400px;
+            width: 80px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius:15px;
+            background-color:#8c222c;
+        }
+        .magnify{
+        width: 200px;
+        margin: 80px auto;
+        position: relative;
+        }
+        /* 在这里我们来设置放大镜的样式 */
+        .large {
+        width: 180px;
+        height: 180px;
+        position: absolute;
+        /* 圆角 */
+        border-radius: 100%;
+        /* 这里使用多重阴影、来实现玻璃的效果 */
+        box-shadow: 0 0 0 7px rgba(255,255,255,0.8),0 0 7px 7px rgba(0,0,0,0.3),inset 0 0 40px 2px rgba(0,0,0,0.3);
+        /* 加载放大镜的图片 */
+        background: url(../img/{$bookimg}) no-repeat;
+        /* 放大镜默认隐藏 */
+        display: none;
+        }
+        /* 解决放大镜在放大的过程中边缘重叠的BUG */
+        .small {
+        display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="w">
+    <div class="header">
+        <ul class="header-left">
+            <li>首页</li>
+            <li>书店区</li>
+            <li>书摊区</li>
+            <li>艺术品专场</li>
+        </ul>
+        <ul class="header-right">
+            <li class="personmsg2"><span>用户名：</span><span class="personmsg1">用户名</span></li>
+<a href="shoppingcar.html?id="+id>
+            <li class="shoppngshow">购物车</li>
+            </a>
+            <li >我的订单</li>
+            <li >个人中心</li>
+            <li>客服</li>
+            <li>手机版</li>
+            <li>北京</li>
+        </ul>
+    </div>
+    <div class="header-nav ">
+        <div class="header-search w cl">
+            <div class="header-img">
+                <img class="logo-1" src="../img/1.png">
+            </div>
+    
+            <div class="header-search-dv">
+                <div class="header-bx">
+                    <form class="header-inpt">
+                        <input class="header-inpt-inpt" placeholder="无效框">
+                    </form>
+                    <button class="search-btn cl">搜索</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<p class="bookname" id="fz" height="30px">读词偶得·清真词释</p>
+    <div class="goodinfo">
+
+        <div class="goodinfo-div-left" >
+            <div class="goodinfo-img1">
+                <div class='magnify'>
+                    <div class='large'></div>
+                <img class="bookimg small" src="../img/33.jpg" width="100" height="120">
+                </div>
+            </div>
+            <div class="goodinfo-uldiv">
+                <ul class="goodinfo-ul1" id="goodinfo-ul1">
+                    <li class="witer">作者: 俞平伯</li>
+                    <li>出版社: 人民文学出版社</li>
+                    <li>出版时间: 2000-12</li>
+                    <li>版次: 1</li>
+                    <li>ISBN: 9787020031658</li>
+                    <li class="price">定价: 9.00</li>                       
+                </ul>
+                <ul class="goodinfo-ul2">
+                    <li>装帧: 平装</li>
+                    <li>开本: 其他</li>
+                    <li>纸张: 胶版纸</li>
+                    <li>页数: 136页</li>
+                    <li>字数: 96千字</li>
+                    <li>分类: 文学</li>     
+                </ul>
+                <div style="word-wrap:break-word;line-height: 20px;">
+                        词是中国古典文学园地中的一株绚丽奇葩，它兴起于唐代，到宋代时达到鼎盛。俞平伯先生是词学研究大家，对诗词研究有着深厚的功底。俞先生著《读词偶得》和《清真词释》，对其所选唐宋名家词作，发表了独到的见解。可以说，原作是垂范后世、嘉惠后人的经典乐章，而评释则是研究者精辟的心得，交相辉映，珠联壁合。
+                        读词偶得 缘起 诗馀闲评 一、温飞卿《菩萨蛮》五首 二、韦端己《菩萨蛮》五首 三、南唐中主《浣溪沙》二首 四、南唐后主词五首 五、史邦.....
+                </div>
+                
+            </div>
+           
+        </div>
+        <div class="goodinfo-div-right">
+            <h2>相关分类</h2>
+            <hr>
+            <ul class="goodinfo-div-right-ul">
+                <li>名家作品 |中国古代文学（1840年以前）</li>
+                <li>文学理论|中国近代文学（1840年-1919年）</li>
+                <li>青春文学|中国现代文学（1919年-1949年）</li>
+                <li>文学评论与鉴赏|中国当代文学（1949年至今）</li>
+                <li>散文|随笔|书信</li>
+                <li>诗歌词曲| 戏剧与曲艺</li>
+                <li>纪实文学| 民间文学</li>
+            </ul>
+        </div>
+    </div>
+    <div class="goodList">
+        <div class="goodlist-title"><button class="search1" id="sum1">4</button>
+            <button class="search1" >综合排序</button>
+            <button class="search1">最新上架</button>
+            <button class="search1">从低到高</button>
+            <button class="search1">品相</button>
+            <button class="search1">只看全新</button>
+<form id="form12"><input placeholder="请输入查询关键字" id="searchin"></form><button id="searchAll">搜索</button>
+        </div>
+        <ul class="goodlist-ul">
+            <!-- <li>
+                <img  width="60" height="80" src="../img/34.jpg">
+                <ul class="goodlist-ul-ul">
+                    <li class="bookname">《读词偶得·清真词释》</li>
+                    <li>九五品</li>
+                    <li>蒙奇奇的书架的书摊 
+                    上海市奉贤区
+                    </li>
+                    <li>￥90.00</li>
+                    <li>加入购物车</li>
+                </ul>
+            </li> -->
+         
+        </ul>
+    </div>
+    </div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+ <!-- <script src="../js/goodinfo.js"></script> -->
+<!-- <script src="../js/index.js"></script> -->
+<script src="../js/cookie.js"></script>
+<!-- <script src="../js/login.js"></script> -->
+
+<script >
+$(document).ready(function(){
+	var native_width = 0;
+	var native_height = 0;
+	// 首先、我们应该获得图像的实际尺寸、（本地的图片）
+	$('.small').load(function(){
+		// 这里我们需要重新创建一个和之前相同的图像对象、
+		// 因为我们不能直接获得图像尺寸的宽高、
+		// 因为我们在HTML里已经指定了图片宽度为200px、
+		var img_obj = new Image();
+		img_obj.src = $(this).attr('src');
+		//  在这里这段代码写在这里是非常有必要的、
+		//  如果在图像加载之前就访问的话、return的宽高值为0、
+		native_width = img_obj.width;
+		native_height = img_obj.height;
+		// 现在、我来开始写鼠标移动的函数、mousemove()
+		$('.magnify').mousemove(function(e){
+			// 获得鼠标X轴和Y轴的坐标
+			//  先获得magnify相对与document的定位position
+			var magnify_offset = $(this).offset();
+			// 这里我们用鼠标相对与文档的位置减去鼠标相对于magnify这个人容器的位置 来得到鼠标的位置
+			var mouse_x = e.pageX - magnify_offset.left;
+			var mouse_y = e.pageY - magnify_offset.top;
+			// 现在、我们来调整一下放大镜的隐藏与显示、
+			if( mouse_x > 0 && mouse_y > 0 && mouse_x < $(this).width() && mouse_y < $(this).height() ){
+				$('.large').fadeIn(100);
+			}else{
+				$('.large').fadeOut(100);
+			}
+			if($('.large').is(':visible')){
+				// 放大镜图片背景的定位是根据鼠标在小图片上改变的位置来改变的、
+				// 因此、我们应该先得到放大的比例、来定位这个放大镜里背景图片的定位、
+				var ratio_x = mouse_x/$('.small').width();//得到的是缩放的比例		
+				var large_x = ratio_x*native_width;
+				// 我们需要让它在放大镜的中间位置显示、
+				large_x = large_x - $('.large').width()/2;
+				// 因为背景图片的定位、这里需要转化为负值、
+				large_x = large_x*-1;
+				// 现在我们来整合一下所有的计算步骤、
+				var rx = Math.round(mouse_x/$('.small').width()*native_width - $('.large').width()/2)*-1;
+				var ry = Math.round(mouse_y/$('.small').height()*native_height - $('.large').height()/2)*-1;
+				var bgp = rx + 'px ' + ry + 'px';
+				// 现在我们应该来写放大镜跟随鼠标的效果、
+				// 放大镜移动的位置 相对于文档的位置 减去 放大镜相对于放大这个层的offset的位置、
+				// 再减去放大镜宽高的一半、保证放大镜的中心跟随鼠标
+				var gx = mouse_x - $('.large').width()/2;
+				var gy = mouse_y - $('.large').height()/2;
+				$('.large').css({
+					'left':gx,
+					'top':gy,
+					'backgroundPosition':bgp
+				})
+			}
+		})
+
+    }) })
+var arr = document.location.href.split('?');
+var arr1=arr[1].split('=');
+id=arr1[1];
+
+// alert(id);
+var url = "";
+
+//  alert(getCookie("username"))
+ $(".personmsg1").html(getCookie("username"));
+//  alert($(".personmsg1").text())
+//生成列表
+$.ajax({
+        type: "get",
+         url: "../php/onebook.php",
+        //  url: "http://localhost/gitone/php/onebook.php",
+        data: {id:1},
+        // dataType:"json",
+        success: function (list) {
+            var list = JSON.parse(list);
+            var html = "";
+            list.forEach(function (item) {
+                var {
+                    storename,
+                    bookprice,
+                    address,
+                    status,
+                    msg,
+                    date
+                    // bookimg
+                } = item;
+                html +=
+                    ` <li>
+                <ul class="goodlist-ul-ul">
+                    <li class="openli">
+                    <img class="bookimg" width="60" height="80"   src="../img/${bookimg}"  ></li>
+                    <li class="bookname">寻访晋南乡野古建</li>
+                    <li>${status}</li>
+                    <li class="storename12">${storename} </li>
+                    <li>${address} </li>
+                    <li class="bookprice12">${bookprice}</li>
+                    <li ><button class="shopping" onclick="getgwc('${date}',this)">加入购物车</button></li>
+                </ul>
+            </li>`;
+            });
+            $(".goodlist-ul").append(html);
+        },
+    });
+
+    $.ajax({
+
+        type: "get",
+        url: "../php/goodinfo.php",
+        //  url: "http://localhost/gitone/php/goodinfo.php",
+        data: {id:id},
+        // dataType:"json",
+        success: function (list) {
+            var list = JSON.parse(list);
+            var html = "";
+            list.forEach(function (item) {
+                var {
+                    bookname,
+                    witer,
+                    price,
+                    bookimg,
+                    bookstore1,
+                     bookstore2,
+                      bookstore3,
+                      bookmsg
+                } = item;
+                $(".bookname").html(bookname);
+                 $(".witer").replaceWith(witer);
+                 $(".price").replaceWith(price);
+                $(".bookimg").attr("src",`../img/${bookimg}`)
+                    url=bookimg
+                    // alert(url)
+            });
+             $(".goodlist-ul").append(html);
+        
+            
+        },
+        
+    });
+
+//加入购物车
+function getgwc(date,li){
+               
+            if(getCookie("username")== $(".personmsg1").text()){
+    //  alert( getCookie("username"));
+var bookname = $(".bookname").html();
+var bookimg = $(".bookimg").attr("src");
+var bookprice=$(".bookprice12").html();
+var storename = $(".storename12").html();
+var num =1;
+console.log(date);
+   alert("加购成功！");
+// console.log(bookprice)
+ $.ajax({
+        type:"get",
+        url:"../php/shoppingcar.php",
+        data:{
+        date:date,
+        storename:storename,
+        bookprice:bookprice,
+        bookimg: bookimg,
+        bookname:bookname,
+        num:num
+        },
+        dataType: "json",
+    });
+//   }
+}
+ else{alert("请登录")}
+}
+//搜索请求数据库
+         var rank =0;
+     $("#searchAll").click(function(){
+        // clickState = 1;
+    $(".goodlist-ul").html("");
+        $.ajax({
+            type:"get",
+        url:"../php/search.php",
+        data:{
+         searchin: $("#searchin").val(),
+            // id:id
+        },
+        dataType:"json",
+        success:function(list){
+                // var list = JSON.parse(list);
+                var html = "";
+               list.forEach(function(item){
+                   var {
+                      storename,
+                    bookprice,
+                    address,
+                    status,
+                    msg,
+                    bookimg
+                   }=item;
+                   rank++;
+                 html  +=   ` <li>
+                <ul class="goodlist-ul-ul">
+                    <li class="openli">
+                <img  width="60" height="80" src="../img/${bookimg}"></li>
+                    <li class="bookname">寻访晋南乡野古建</li>
+                    <li>${status}</li>
+                    <li>${storename} </li>
+                    <li>${address} </li>
+                    <li>${bookprice}</li>
+                    <li >加入购物车</li>
+                </ul>
+            </li>`;
+                    
+
+        $(".goodlist-ul").append(html);
+                        });
+                            }
+});
+})
+
+    
+
+
+//点击按钮上传到数据库
+  
+$("#sum1").replaceWith(rank);
+
+
+</script>
+</html>

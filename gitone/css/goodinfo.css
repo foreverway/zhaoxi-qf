@@ -1,0 +1,281 @@
+@charset "utf-8";
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+input,
+button,
+textarea {
+    padding: 0;
+    margin: 0;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+    cursor: pointer;
+}
+
+img {
+    vertical-align: top;
+    border: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    /*inherit继承父元素的属性值*/
+    color: inherit;
+}
+
+a:hover {
+    color: red;
+}
+
+html {
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: #333;
+}
+
+.cl:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.cl {
+    /*解决IE6、7的浮动问题*/
+    zoom: 1;
+}
+
+.w {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**************** 单行超出省略 ********************/
+.el {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bd0 {
+    border: 0;
+}
+
+.red {
+    color: red;
+}
+
+.center {
+    text-align: center;
+}
+.header{
+    height: 40px;
+     background-color: #8c222c;
+}
+.header-left{
+    float: left;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+}
+.header-left li,
+.header-right li {
+    float: left;
+    margin: 0 10px;
+   
+    color:white;
+}
+
+.header-right{
+    float:right;
+    width: 500px;
+    height: 40px;
+    line-height: 40px;
+}
+ 
+ 
+
+ .header-nav {
+     height: 100px;
+     background-color: white;
+ }
+     .header-search {
+         height: 100px;
+         line-height: 100px;
+     }
+         .header-img {
+             height: 41px;
+             width: 232px;
+             float: left;
+         }
+             .logo-1 {
+                 width: 100%;
+                 height: 41px;
+                 margin-top: 30px;
+                 display: inline-block;
+             }
+
+
+     .header-search-dv {
+         width: 600px;
+         height: 100px;
+         float: right;
+         line-height: 100px;
+     }
+         .header-bx {
+             height: 40px;
+             width: 600px;
+             margin-top: 30px;
+         }
+             .header-inpt {
+                 height: 40px;
+                 width: 500px;
+                 float: left;
+             }
+                
+                 .header-inpt-inpt {
+                     height: 40px;
+                     width: 500px;
+                     float: left;
+                 }
+             
+
+             .search-btn {
+                 background-color: #8c222c;
+                 width: 90px;
+                 height: 40px;
+                 float: left;
+                 color: white;
+                 margin-left: 5px;
+
+                 margin-top:5px;}
+                  .search-btn span {
+                     display: inline;
+                 }
+  .title{
+      margin:10px 0 30px 0;
+  }
+  .goodinfo{
+      width: 1000px;
+      height: 300px;
+  }
+  .goodinfo-div-left{
+      width: 710px;
+      height: 270px;
+      float: left;
+  }
+  .goodinfo-p1{
+      width: 160px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      margin: 10px 0;
+  }
+  .goodinfo-img1{
+      float: left;
+      width: 160px;
+      height: 160px;
+  }
+  .goodinfo-uldiv{
+      width: 510px;
+      height: 140px;
+      float: left;
+  }
+  .goodinfo-ul1,
+  .goodinfo-ul2{
+      width: 250px;
+      height: 140px;
+      float: left;
+  }
+    .goodinfo-ul1 li,
+    .goodinfo-ul2 li{
+        width: 250px;
+        height: 20px;
+        line-height: 20px;
+    }
+    .goodinfo-div-right{
+        width: 250px;
+        height: 300px;
+        float:right;
+    }
+    .goodinfo-div-right-ul{
+        height: 250px;
+        width: 250px;
+    }
+    .goodinfo-div-right-ul li{
+        height: 30px;
+        line-height: 30px;
+        width: 250px;
+    }
+    .goodlist-title{
+        width: 1000px;
+        height: 40px;
+    }
+    .goodlist-title p{
+        width: 50px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        margin: 0 10px;
+        float: left;
+    }
+    .goodlist-ul li{
+        width: 1000px;
+        height: 130px;
+    }
+    .goodlist-ul-ul{
+        width: 1000px;
+        height: 120px;
+        /* float: right; */
+    }
+    .goodlist-ul-ul li{
+        width: 80px;
+         margin-top:30px; 
+        margin: 0 10px;
+        height: 120px;
+        float: left;
+    }
+    #fz {
+        font-size: 18px;
+        margin: 10px 0 32px 0;
+        height: 30px;
+        width: 1000px;
+    }
+    .openli{
+        width: 60px;
+        height: 120px;
+    }
+    .goodlist-title .search1 {
+        border:1px solid silver;
+        border-radius:5px;
+        color:#8c222c;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    #form12{
+      /* float: right; */
+      display:inline-block;
+    }
+
+    

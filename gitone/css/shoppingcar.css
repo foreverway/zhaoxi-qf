@@ -1,0 +1,476 @@
+@charset "utf-8";
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+input,
+button,
+textarea {
+    padding: 0;
+    margin: 0;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+    cursor: pointer;
+}
+
+img {
+    vertical-align: top;
+    border: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    /*inherit继承父元素的属性值*/
+    color: inherit;
+}
+
+a:hover {
+    color: red;
+}
+
+html {
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: #333;
+}
+
+.cl:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.cl {
+    /*解决IE6、7的浮动问题*/
+    zoom: 1;
+}
+
+.w {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**************** 单行超出省略 ********************/
+.el {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bd0 {
+    border: 0;
+}
+
+.red {
+    color: red;
+}
+
+.center {
+    text-align: center;
+}
+.header{
+    height: 40px;
+     background-color: #8c222c;
+}
+.header-left{
+    float: left;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+}
+.header-left li,
+.header-right li {
+    float: left;
+    margin: 0 10px;
+   
+    color:white;
+}
+
+.header-right{
+    float:right;
+    width: 500px;
+    height: 40px;
+    line-height: 40px;
+}
+.shopcar-ul1{
+    width: 1100px;
+    height: 40px;
+}
+.shopcar-ul1 div {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    display: inline-block;
+}
+.shopcar-div{
+    /* margin-top: 30px; */
+    width: 1200px;
+    height: 40px;
+} 
+/* .shopping-list-ul3{
+    width: 1200px;
+    height: 40px;
+   /* padding-left:50px; */
+*/
+/* .updateshop{
+    height: 100px;
+    width: 1200px;
+    margin:10px 0;
+}
+.shopping-list-ul {
+    width: 1200px;
+    height: 100px;
+     /* padding-left:50px; */
+/* }
+
+    .shopping-list-ul li{
+    width: 100px;
+    height: 100px;
+    margin:0 10px;
+    line-height: 100px;
+    float: left;
+    display: inline-block;
+}
+#shopdiv {
+    display: inline-block;
+    float: left;
+
+}
+.shopping-list-ul3 li{
+        width: 100px;
+        height: 20px;
+        line-height: 20px;
+       display:inline-block;
+}
+.shopping-list-ul3 li{
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    display: inline-block;
+} 
+ #shopping-list-ul3-li3{
+    float:right;
+    color:white;
+    font-size:16px;
+    text-align: center;
+    background-color:#f00;
+    margin-right: 200px;
+} */
+/* #delete{
+    font-size:14px;
+    background-color: #ff0;
+    float:right;
+    text-align: center;
+    margin-right: 200px;
+} */
+/* .shopping-list-ul3{
+    position:fixed;
+    right:400px;
+    bottom:20px;
+    background-color:(250,250,250,);
+   
+} */ 
+.catbox {
+    width: 940px;
+    margin: 100px auto;
+}
+
+.catbox table {
+    text-align: center;
+    width: 100%;
+}
+
+.catbox table th,
+.catbox table td {
+    border: 1px solid #CADEFF;
+}
+
+.catbox table th {
+    background: #8c222c;
+    border-top: 3px solid #8c222c;
+    height: 30px;
+    color:white;
+}
+
+.catbox table td {
+    padding: 10px;
+    color: #444;
+}
+
+.catbox table tbody tr:hover {
+    background: RGB(88, 526, 125,.7);
+}
+
+.checkbox {
+    width: 60px;
+}
+
+.check-all {
+    vertical-align: middle;
+}
+
+.goods {
+    width: 300px;
+}
+
+.goods span {
+    width: 180px;
+    margin-top: 20px;
+    text-align: left;
+    float: left;
+}
+
+.goods img {
+    width: 100px;
+    height: 80px;
+    margin-right: 10px;
+    float: left;
+}
+
+.price {
+    width: 130px;
+}
+
+.count {
+    width: 90px;
+}
+
+.count .add,
+.count input,
+.count .reduce {
+    float: left;
+    margin-right: -1px;
+    position: relative;
+    z-index: 0;
+}
+
+.count .add,
+.count .reduce {
+    height: 23px;
+    width: 17px;
+    border: 1px solid #e5e5e5;
+    background: #f0f0f0;
+    text-align: center;
+    line-height: 23px;
+    color: #444;
+}
+
+.count .add:hover,
+.count .reduce:hover {
+    color: #f50;
+    z-index: 3;
+    border-color: #f60;
+    cursor: pointer;
+}
+
+.count input {
+    width: 50px;
+    height: 15px;
+    line-height: 15px;
+    border: 1px solid #aaa;
+    color: #343434;
+    text-align: center;
+    padding: 4px 0;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.subtotal {
+    width: 150px;
+    color: red;
+    font-weight: bold;
+}
+
+.operation span:hover,
+a:hover {
+    cursor: pointer;
+    color: red;
+    text-decoration: underline;
+}
+
+.foot {
+    margin-top: 0px;
+    color: #666;
+    height: 48px;
+    border: 1px solid #c8c8c8;
+    border-top: 0;
+    background-color: #eaeaea;
+    background-image: linear-gradient(RGB(241, 241, 241), RGB(226, 226, 226));
+    position: relative;
+    z-index: 8;
+}
+
+.foot div,
+.foot a {
+    line-height: 48px;
+    height: 48px;
+}
+
+.foot .select-all {
+    width: 80px;
+    height: 48px;
+    line-height: 48px;
+    color: #666;
+    text-align: center;
+}
+
+.foot .delete {
+    padding-left: 10px;
+}
+
+.foot .closing {
+    border-left: 1px solid #c8c8c8;
+    width: 103px;
+    text-align: center;
+    color: #666;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(RGB(241, 241, 241), RGB(226, 226, 226));
+}
+
+.foot .closing:hover {
+    background-image: linear-gradient(RGB(226, 226, 226), RGB(241, 241, 241));
+    color: #333;
+}
+
+.foot .total {
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.foot #priceTotal,
+.foot #selectedTotal {
+    color: red;
+    font-family: "Microsoft Yahei";
+    font-weight: bold;
+}
+
+.foot .selected {
+    cursor: pointer;
+}
+
+.foot .selected .arrow {
+    position: relative;
+    top: -3px;
+    margin-left: 3px;
+}
+
+.foot .selected .down {
+    position: relative;
+    top: 3px;
+    display: none;
+}
+
+.show .selected .down {
+    display: inline;
+}
+
+.show .selected .up {
+    display: none;
+}
+
+.foot .selected:hover .arrow {
+    color: red;
+}
+
+.foot .selected-view {
+    width: 938px;
+    border: 1px solid #c8c8c8;
+    position: absolute;
+    height: auto;
+    background: #ffffff;
+    z-index: 9;
+    bottom: 48px;
+    left: -1px;
+    display: none;
+}
+
+.show .selected-view {
+    display: block;
+}
+
+.foot .selected-view div {
+    height: auto;
+}
+
+.foot .selected-view .arrow {
+    font-size: 16px;
+    line-height: 100%;
+    color: #c8c8c8;
+    position: absolute;
+    right: 330px;
+    bottom: -9px;
+}
+
+.foot .selected-view .arrow span {
+    color: #ffffff;
+    position: absolute;
+    left: 0px;
+    bottom: 1px;
+}
+
+#selectedViewList {
+    padding: 10px 20px 10px 20px;
+}
+
+#selectedViewList div {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 80px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    float: left;
+}
+
+#selectedViewList div img {
+    width: 100px;
+    height: 80px;
+    margin-right: 10px;
+    float: left;
+}
+
+#selectedViewList div span {
+    display: none;
+    color: #ffffff;
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 60px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    background: #000;
+    cursor: pointer;
+}
+
+#selectedViewList div:hover span {
+    display: block;
+}
+#aaaa {
+    background-color: #f00;
+}
