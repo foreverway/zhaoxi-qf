@@ -1,0 +1,226 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,input,button,textarea{
+	padding: 0;
+	margin: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.container{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.top{
+	width: 100%;
+	height: 85px;
+	background:url(../images/1_02.png) no-repeat left center;
+	background-size: cover;
+	overflow: hidden;
+}
+.title{
+	float: left;
+	color: white;
+}
+.twoPage{
+	width: 300px;
+	height: 85px;
+	margin: 15px auto;
+	list-style: none;
+}
+.twoPage li{
+	float: left;
+	width: 140px;
+	height: 55px;
+	text-align: center;
+	line-height: 55px;
+	border-radius: 4px;
+	cursor: pointer;
+	background: linear-gradient(to bottom, #c5e6ed, #f7ffff);
+	background: linear-gradient(to top, #c5e6ed, #f7ffff);
+}
+.twoPage li:first-child{
+	margin-right: 10px;
+}
+.middle .middle_top{
+	width: 100%;
+	height: 40px;
+	background-color: #e7f9fb;
+}
+.middle .choose{
+	margin: 15px auto;
+	text-align: center;
+}
+.middle .choose input[type=text]{
+	width: 190px;
+	height: 28px;
+	box-sizing: border-box;
+	padding: 3px 5px;
+	border-radius: 3px;
+	margin-right: 3px;
+}
+.middle .choose input[type=radio]{
+	cursor: pointer;
+}
+.chaxun{
+	width: 50px;
+	height: 28px;
+	line-height: 28px;
+}
+.fenGeXian{
+	width: 100%;
+	height: 1px;
+	background-color: blue;
+}
+.content{
+	width: 85%;
+	margin: 5px auto;
+	text-align: center;
+	border-collapse: collapse;
+	cursor: pointer;
+}
+.table_title td{
+	background-color: #e7f9fb;
+	border: 1px solid gray;
+	height: 35px;
+	line-height: 35px;
+}
+.table_content td{
+	border: 1px solid gray;
+	height: 35px;
+	line-height: 35px;
+}
+#box{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -250px;
+}
+.page {
+	height: 30px;
+	width: 500px;
+	margin: 50px auto;
+}
+
+.page span {
+	float: left;
+	height: 30px;
+	width: 100px;
+	text-align: center;
+	line-height: 30px;
+	background-color: black;
+	color: aliceblue;
+	cursor: pointer; 
+}
+
+.page .page-content {
+	float: left;
+	height: 30px;
+}
+
+.page-content li {
+	float: left;
+	height: 30px;
+	width: 30px;
+	color: blue;
+	text-align: center;
+	line-height: 30px;
+	margin-left: 4px; 
+	margin-right: 4px ;
+	cursor: pointer; 
+	list-style: none;
+}
+.page-content li:hover{
+	box-sizing: border-box;
+	border: 1px solid #000;
+	color: black;
+}
+.page-content li.selected{
+	background-color: rebeccapurple;
+}
+
+.page .disabled{
+	background-color: gray;
+}
+.detail{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: rgba(0,0,0,0.5);
+	top: 0;
+	left: 0;
+	display: none;
+}
+.detail_content{
+	width: 80%;
+	margin: 100px auto;
+	background-color: #bbd3eb;
+	box-sizing: border-box;
+	padding: 10px 10px;
+}
+.detail_title{
+	box-sizing: border-box;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+}
+.detail_title #close{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	color:white;
+	float: right;
+	background-color: red;
+	border-radius: 4px;
+	cursor:pointer;
+}
+.form1,.form2{
+	background-color: #fff;
+	margin-bottom: 10px;
+}	
+.form1 select,.form2 select{
+	height: 30px;
+}
+.form1 input,.form2 input{
+	box-sizing: border-box;
+	width: 195px;
+	height: 30px;
+	padding: 5px;
+	margin-left: 0;
+}
+.form1 span.s1,.form2 span.s2{
+	display: inline-block;
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+#qingjiaReson,#beizhu{
+	width: 350px;
+	height: 120px;
+	resize: none;
+}
+.form1 span.texra,.form2 span.texra{
+	height: 120px;
+	line-height: 120px;
+	float: left;
+	margin-right: 10px;
+}
+.first_line,.second,.third{
+	margin-bottom: 15px;
+}
+.detail_footer{
+	text-align: center;
+}
+.detail_footer .queding,.detail_footer .quxiao{
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+}
+.detail_footer .quxiao{
+	margin-left: 20px;
+}

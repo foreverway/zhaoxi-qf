@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>考勤管理页面</title>
+	<link rel="stylesheet" href="../css/kaoqinguanli.css">
+	<link rel="stylesheet" href="../css/datepicker.css">
+</head>
+<body>
+	<div class="container">
+		<div class="top">
+			<span class="title">考勤子系统</span>
+			<ul class="twoPage">
+				<li><a href="kaoqinguanli.html">考勤管理</a></li>
+				<li><a href="qingjiashenpi.html">请假审批</a></li>
+			</ul>
+			<ul class="top_right">
+				<li id="personInfo"><a href="javascript:;">个人信息</a></li>
+				<li id="logout"><a href="javascript:;">退出</a></li>
+			</ul>
+		</div>
+		<div class="personinfo">
+			<form action="" class="personinfoform">
+					<fieldset>
+						<legend>个人信息 :</legend>
+					<span class="pshadow">新密码:</span><input type="password" id="newpwd" class="pinput"><br>
+					<span class="pshadow">确认密码:</span><input type="password" id="surepwd" class="pinput"><br>
+					<span class="pshadow">手机号码:</span><input type="text" id="usertel" class="pinput"><br>
+					<button id="save">保存</button><button id="cancel">取消</button>
+					</fieldset>
+				</form>
+		</div>
+		<div class="middle">
+			<div class="middle_top"></div>
+			<!-- <div class="choose">
+				标题: <input type="text" id="title">
+				申请时间 <input type="text" id="statrTime">
+				到<input type="text" id="endTime">
+				请假单状态
+				<input type="radio" name="status" value="3">待审批
+				<input type="radio" name="status" value="2">归档
+				<input type="radio" name="status" value="1">全部
+				申请人：<input type="text">
+				<button class="chaxun">查询</button>
+			</div> -->
+			<div class="fenGeXian"></div>
+			<table class="biaoge">
+				<!-- <tr class="tr">
+					<td>序号</td>
+					<td><a href="javascript:">用户ID</a></td>
+					<td><a href="javascript:">用户名</a></td>
+					<td><a href="javascript:">部门</a></td>
+					<td>查看</td>
+				</tr> -->
+				<!-- <tr>
+					<td>1</td>
+					<td>134</td>
+					<td>张三</td>
+					<td>纪检部</td>
+					<td>查看</td>
+				</tr> -->
+			</table>
+			
+		</div>
+		<div class="shawdow">
+			<div class="s_content">
+				<div class="sha_title">
+					<span class="kaoqin">查看考勤</span>
+					<span class="close">×</span>
+				</div>
+				<div class="inner">
+					<div class="riqi">
+					<select name="" id="">
+						<option value="">2017</option>
+					</select>年
+					<select name="" id="">
+						<option value="">1</option>
+					</select>月
+					<button class="btn">查看</button>
+				</div>
+				<div class="fenGeXian"></div>
+				<table class="yuangongBiao">
+					<tr class="tr">
+						<td>日期</td>
+						<td>星期</td>
+						<td>首次打卡时间</td>
+						<td>最后打卡时间</td>
+						<td>考勤状态</td>
+					</tr>
+					<tr>
+						<td>2016587</td>
+						<td>81dddddddddd</td>
+						<td>1235</td>
+						<td></td>
+						<td>5132</td>
+					</tr>
+				</table>
+			</div>
+
+				</div>
+				
+			</div>
+		<div id="box" class="page" >
+
+		</div>
+		
+	</div>
+</body>
+
+<script src="../js/datepicker.js"></script>
+<script src="../js/jq/jquery-1.11.3.js"></script>
+<script src="../js/fenye.js"></script>
+<script src="../js/cookie.js"></script>
+<script src="../js/kaoqinguanli.js"></script>
+</html>

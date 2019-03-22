@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            @charset "utf-8";
+    body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,input,button,textarea{
+        padding: 0;
+        margin: 0;
+      }
+    input[type="button"],input[type="submit"],input[type="reset"],button{
+        cursor: pointer;
+      }
+    img{
+        vertical-align: top;
+        border: 0;
+         }
+    li{
+        list-style: none;
+            }
+    a{
+        text-decoration: none;
+        /*inherit继承父元素的属性值*/
+        color: inherit;
+          }
+    a:hover{
+        color: red;
+         }
+    html{
+        font-family: "微软雅黑";
+        font-size: 12px;
+        color: #333;
+           }
+    .cl:after{
+        content: "";
+        display: block;
+        clear: both;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+           }
+    .cl{
+        /*解决IE6、7的浮动问题*/
+        zoom: 1;
+         }
+    .w{
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+          }
+    /**************** 单行超出省略 ********************/
+    .el{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow:ellipsis;
+          }
+    .bd0{
+        border: 0;
+          }
+
+    .center{
+        text-align: center;
+         }
+    .fl{
+        float: left;
+         }
+    .fr{
+        float: right;
+         }
+         .header{
+             height: 60px;
+            background-color:rgba(57, 22, 182, 0.842);
+            color:white;
+            font-size: 14px;
+         }
+         .header1{
+           position: relative;
+           top:0;
+           margin:0;
+           margin:auto;
+           height: 50px;
+           width: 230px;
+         }
+         .work,.relax{
+            background-color: rgba(255, 255, 255, 0.925);
+            color:royalblue;
+            float: left;
+            height: 40px;
+            width: 100px;
+            line-height: 40px;
+            font-size: 14px;
+            margin:5px;
+            border-radius:5px;
+            text-align: center;
+            font-weight:700;
+         }
+         .date{
+           margin:0 auto; 
+           width: 250px;
+         }
+         .list ul{
+            float: left;
+            /* border:1px solid silver ; */
+         }
+         ul li:first-Child{
+             /* background-color: cornflowerblue; */
+             text-align: center;
+            font-size: 14px;
+         }
+         ul li{
+             height: 25px;
+              border:1px solid silver ;
+              text-align: center;
+              line-height: 25px;
+              float: left;
+         }
+         .li1{
+             width: 200px;
+         }
+         .li2{
+             width: 150px;
+         }
+         .li3{
+             width: 250px;
+         }
+         .li4{
+             width: 250px;
+         }
+         .li5{
+             width: 250px;
+         }
+        .daily{
+            width: 708px;
+            margin-left: 400px;
+        }
+        .lia{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+        
+        }
+        .hbox:hover>.hoverDiv {
+            display:block;
+        }   
+        .hoverDiv{
+            position: relative;
+            right:0;
+            top:0;
+            display:none;
+            z-index: 7;
+        }
+    </style>
+</head>
+<script src="../js/jquery-1.11.3.js"></script>
+
+<body>
+    <div class="header cl ">
+        考勤子系统
+        <div class= header1 >
+        <div class="work">我的考勤</div>
+        <div class = "relax">请假申请</div>
+        </div>
+    </div>
+
+    <div class="date cl">
+        <select>
+            <option>2019</option>
+        </select>年
+        <select>
+            <option>3</option>
+        </select>月
+        <select id="changeView">
+            <option id="listIndex" value="listShow">列表显示</option>
+<!-- <option class="listI4ndex">列表不显示</option> -->
+            <option id="dailyIndex" value="dailyShow" >日历显示</option>
+        </select>
+        <button class="look">查看</button>
+    </div>
+
+    <div class="list w">
+        <ul class="listUl">
+        <li class="li1" >日期</li>
+        <li class="li2">星期</li>
+        <li class="li3">首次打卡时间</li>
+        <li class="li4">最后打卡时间</li>
+        <li class="li5">考勤状态</li>
+        </ul>
+    </div>
+    <div class="daily">
+        <ul class="dailyLi">
+     
+        </ul>
+    </div>
+</body>
+<link href="../css/datepicker.css" type="text/css" rel="stylesheet">
+<script src="../js/datepicker.js"></script>
+<script>
+
+$("#changeView").change(function(){
+if($(this).val()=="listShow"){
+$(".list").css("display","block");
+$(".daily").css("display","none");
+}else{
+$(".daily").css("display","block");
+$(".list").css("display","none");
+}
+});
+
+    $(".look").click(function(){
+    $(".ul1").append("<li>2019.03.09</li>");
+    $(".ul2").append("<li>周六</li>");
+    $(".ul3").append("<li>2019.02.06</li>");
+    $(".ul4").append("<li>2019.02.03</li>");
+    $(".ul5").append("<li>休假</li>");
+    });
+
+$.ajax({
+    type:"get",
+    url:"../php/worklist.php",
+    success:function(list){
+        var list = JSON.parse(list);
+        var html ="";
+        list.forEach(function(item){
+    var {
+        datetime,
+        week,
+        status,
+        }=item;
+        html +=
+    `<ul>
+<li class="li1">${datetime}</li>
+<li class="li2">${week}</li>
+        <li class="li3">&nbsp</li>
+        <li class="li4">&nbsp</li>
+        <li class="li5">${status}</li>
+    </ul> `;
+    });
+    $(".list").append(html);
+},
+});
+
+$.ajax({
+    type:"get",
+    url:"../php/worklist.php",
+success:function(list){
+    var list = JSON.parse(list);
+    var html ="";
+list.forEach(function(item){
+    var {
+        datetime,
+        week,
+        status,
+    }=item;
+html +=
+    `   <div class="hbox">
+        <li class="lia">${status}</li>
+        <div class="hoverDiv">
+            <p>最早打卡时间2019.03.12</p>
+            <p>最晚打卡时间2019.03.12</P>
+        </div>
+        </div>
+       `;
+});
+    $(".dailyLi").append(html);
+},
+});
+
+
+$(".relax").click(function () {
+// $(location).attr('href','relax.html')
+window.location.href = "relax.html";
+});
+
+</script>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>请假审批页面</title>
+	<link rel="stylesheet" href="../css/qingjiashenpi.css">
+	<link rel="stylesheet" href="../css/datepicker.css">
+</head>
+<body>
+	<div class="container">
+		<div class="top">
+			<span class="title">考勤子系统</span>
+			<ul class="twoPage">
+				<li><a href="kaoqinguanli.html">考勤管理</a></li>
+				<li><a href="qingjiashenpi.html">请假审批</a></li>
+			</ul>
+		</div>
+		<div class="middle">
+			<div class="middle_top"></div>
+			<div class="choose">
+				标题: <input type="text" id="title">
+				申请时间 <input type="text" id="statrTime">
+				到<input type="text" id="endTime">
+				请假单状态
+				<input type="radio" name="status" value="3">待审批
+				<input type="radio" name="status" value="2">归档
+				<input type="radio" name="status" value="1" checked="">全部
+				申请人：<input type="text" id="shenqingren">
+				<button class="chaxun">查询</button>
+			</div>
+			<div class="fenGeXian"></div>
+			<table class="content">
+				<!-- <tr class="table_title">
+					<td>请假单ID</td>
+					<td>申请人</td>
+					<td>标题</td>
+					<td>起始时间</td>
+					<td>结束时间</td>
+					<td>申请时间</td>
+					<td>请假单状态</td>
+					<td></td>
+				</tr> -->
+				<!-- <tr class="table_content">
+					<td class="qingjiaID">1000</td>
+					<td class="qingjiaPeople">李振</td>
+					<td class="qingjiaTitle">我要请假</td>
+					<td class="qingjiaStart">2016-349</td>
+					<td>2016-349</td>
+					<td>2016-5-8</td>
+					<td>归档</td>
+					<td class="chakan">产看</td>
+				</tr> -->
+			</table>
+		</div>
+		<div id="box" class="page" >
+
+		</div>
+		<div class="detail">
+			<div class="detail_content">
+				<div class="detail_title">
+					<span>请假详情</span>
+					<span id="close">×</span>
+				</div>
+				<form action="" class="form1">
+					<fieldset>
+						<legend>请假信息</legend>
+					<div class="first_line">
+						<span class="danhao"><span class="s1">请假单号 :</span></span>
+						<span class="danhaoInfo">1003</span>
+						<span class="s1">申请人:</span>
+						<span class="shenqingR">李振</span>
+					</div>
+					<div class="second"><span class="s1">标题 :</span><input type="text" placeholder="去看演唱会" class="biaoti"></div>
+					<div class="third"><span class="s1" style="margin-left: -4px">起始时间 :</span> <input type="text" placeholder="2014-4-29" class="StartTime">
+						<select name="" id="">
+							<option value="">8:30</option>
+						</select>
+						<span class="s1">结束时间 ：</span><input type="text" class="EndTime">
+						<select name="" id="">
+							<option value="">17:00</option>
+						</select>
+					</div>
+					<div class="four">
+						<span class="s1 texra">请假原因 :</span>
+						<textarea name="" id="qingjiaReson" cols="30" rows="10">你干我</textarea>
+					</div>
+					</fieldset>
+				</form>
+
+				<form action="" class="form2">
+					<fieldset>
+						<legend>审批信息 :</legend>
+					<span class="s2">申请时间:</span> <span id="shawdowTime">2016-82</span><br>
+					<span class="s2">审批结果 :</span> 
+					<select name="" id=""><option value="">同意</option><option value="">不同意</option></select><br>
+					<span class="s2">审批人 :</span><span id="shenpiren">王艳</span><br>
+					<span class="s2">审批时间 :</span><span id="shenpiTime">201349-65</span><br>
+					<span class="s2 texra">备注 :</span><textarea name="" id="beizhu" cols="30" rows="10">不想批</textarea>
+					</fieldset>
+				</form>
+				<div class="detail_footer">
+				<button class="queding">确定</button>
+				<button class="quxiao">取消</button>
+			</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+<script src="../js/jq/jquery-1.11.3.js"></script>
+<script src="../js/qingjiashenpi.js"></script>
+<script src="../js/fenye.js"></script>
+<script src="../js/datepicker.js"></script>
+<script src="../js/cookie.js"></script>
+
+</html>

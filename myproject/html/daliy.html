@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @charset "utf-8";
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        ol,
+        dl,
+        dd,
+        input,
+        button,
+        textarea {
+            padding: 0;
+            margin: 0;
+        }
+
+        input[type="button"],
+        input[type="submit"],
+        input[type="reset"],
+        button {
+            cursor: pointer;
+        }
+
+        img {
+            vertical-align: top;
+            border: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            /*inherit继承父元素的属性值*/
+            color: inherit;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        html {
+            font-family: "微软雅黑";
+            font-size: 12px;
+            color: #333;
+        }
+
+        .cl:after {
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .cl {
+            /*解决IE6、7的浮动问题*/
+            zoom: 1;
+        }
+
+        .w {
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /**************** 单行超出省略 ********************/
+        .el {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .bd0 {
+            border: 0;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .header {
+            height: 60px;
+            background-color: rgba(57, 22, 182, 0.842);
+            color: white;
+            font-size: 14px;
+        }
+
+        .header1 {
+            position: relative;
+            top: 0;
+            margin: 0;
+            margin: auto;
+            height: 50px;
+            width: 230px;
+        }
+
+        .work,
+        .relax {
+            background-color: rgba(255, 255, 255, 0.925);
+            color: royalblue;
+            float: left;
+            height: 40px;
+            width: 100px;
+            line-height: 40px;
+            font-size: 14px;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .date {
+            margin: 0 auto;
+            width: 250px;
+        }
+
+        .list ul {
+            margin-top: 10px;
+            float: left;
+            /* border:1px solid silver ; */
+        }
+
+        ul li:first-Child {
+            background-color: cornflowerblue;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        ul li {
+            height: 25px;
+            border: 1px solid silver;
+            text-align: center;
+            line-height: 25px;
+        }
+
+        .ul1 {
+            width: 200px;
+        }
+
+        .ul2 {
+            width: 100px;
+        }
+
+        .ul3 {
+            width: 250px;
+        }
+
+        .ul4 {
+            width: 250px;
+        }
+
+        .ul5 {
+            width: 250px;
+        }
+    </style>
+</head>
+<script src="../js/jquery-1.11.3.js"></script>
+
+<body>
+    <div class="header cl ">
+        考勤子系统
+        <div class=header1>
+            <div class="work">我的考勤</div>
+            <div class="relax">请假申请</div>
+        </div>
+    </div>
+
+    <div class="date cl">
+        <select>
+            <option>2019</option>
+        </select>年
+        <select>
+            <option>3</option>
+        </select>月
+        <select>
+            <option>列表显示</option>
+            <option>日历显示</option>
+        </select>
+        <button class="look">查看</button>
+    </div>
+    </body>
+    </html>                  

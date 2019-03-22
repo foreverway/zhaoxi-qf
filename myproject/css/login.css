@@ -1,0 +1,101 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,input,button,textarea{
+	padding: 0;
+	margin: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+#login{
+	width: 100%;
+	height: 100%;
+	
+	padding-top: 200px;
+	box-sizing: border-box;
+	background: url(../images/1_02.png) no-repeat right bottom;
+	background-color: #258bce;
+	background-size: 100% 250px;
+}
+#content{
+	width: 400px;
+	height: 350px;
+	margin: 0 auto;
+	/*border: 1px solid black;*/
+	text-align: center;
+}
+#title{
+	width: 400px;
+	color: white;
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+#form{
+	width: 100%;
+	height: 280px;
+	background-color: #fff;
+	border-radius: 8px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	box-shadow: 0 50px #3d92cb;
+}
+
+#firstLine .firstLeft,#firstLine .firstRight{
+display: block;
+ width: 50px;
+ height: 1px;
+ line-height: 22px;
+ background-color: gray;
+}
+#firstLine .firstLeft{
+	float: left;
+	margin-top: 14px;
+}
+#firstLine .firstRight{
+	float: right;
+	margin-top: 14px;
+}
+#firstLine .firstContent{
+	color: #258bce;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+}
+#secondLine{
+	margin-top: 20px;
+}
+#secondLine .user,#secondLine .pwd{
+	display: inline-block;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: justify;
+}
+#secondLine #username,#secondLine #userpwd{
+border-radius: 5px;
+height: 30px;
+box-sizing: border-box;
+padding: 5px;
+}
+#userTishi,#pwdTishi{
+	display:block;
+	width: 210px;
+	font-size: 14px;
+	color: red;
+	margin-left: 120px;
+	margin-top: 10px;
+	text-align: left;
+	visibility: hidden;
+}
+
+#btn{
+	width: 65px;
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	background-color: #258bce;
+	border-radius: 5px;
+	color: white;
+	margin-right: 35px;
+	cursor: pointer;
+}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<link href="../css/datepicker.css" type="text/css" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        @charset "utf-8";
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        ol,
+        dl,
+        dd,
+        input,
+        button,
+        textarea {
+            padding: 0;
+            margin: 0;
+        }
+
+      
+        button {
+            cursor: pointer;
+        }
+
+        img {
+            vertical-align: top;
+            border: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            /*inherit继承父元素的属性值*/
+            color: inherit;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        html {
+            font-family: "微软雅黑";
+            font-size: 12px;
+            color: #333;
+        }
+
+        .cl:after {
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .cl {
+            /*解决IE6、7的浮动问题*/
+            zoom: 1;
+        }
+
+        .w {
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .el {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .bd0 {
+            border: 0;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .header {
+            height: 60px;
+            background-color: rgba(57, 22, 182, 0.842);
+            color: white;
+            font-size: 14px;
+        }
+        .header1 {
+            position: relative;
+            top: 0;
+            margin: 0;
+            margin: auto;
+            height: 50px;
+            width: 400px;
+        }
+
+        .work,
+        .relax {
+            background-color: rgba(255, 255, 255, 0.925);
+            color: royalblue;
+            float: left;
+            height: 34px;
+            width: 100px;
+            line-height: 34px;
+            font-size: 14px;
+            margin: 3px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+         /* .date {
+            margin: 0 auto;
+            width: 250px;
+        } */
+
+        .list ul {
+            float: left;
+            width: 1200px;
+             border:1px solid silver ; 
+
+        } 
+
+        .firstUl{
+
+            text-align: center;
+            font-size: 14px;
+            width: 1200px;
+        }
+        .firstUl li{
+        background-color: royalblue;
+        }
+        ul li {
+            height: 25px;
+            border: 1px solid silver;
+            text-align: center;
+            line-height: 25px;
+            width: 148px;
+            float: left;
+        }
+     
+        .wanted{
+            margin-left:180px;
+        }
+     #kinds{
+        position: relative;
+        top: 0;
+       left: 0;
+        margin: auto; 
+        height: 40px;
+        width: 1200px;
+        line-height: 40px;
+        }
+        .shadow {
+        position: fixed;
+        top:250px;
+        left:450px;
+        width: 500px;
+        height: 250px;
+        border:1px solid silver;
+        border-radius: 10px;
+        display:none;
+        }
+    .relaxReq{
+        height: 50px;
+        width: 500px;
+        line-height: 50px;
+        background-color:royalblue;
+        font-weight: 800;
+    }
+        .relaxMsg{
+            border:1px solid silver;
+    
+            background-color: #fff;
+        }
+        .relaxYes{
+            margin:20px  20px 20px 180px;
+        }
+        .relaxReq2{
+            background-color:white;
+        }
+        .bigBox{
+            margin:auto;
+          
+            width: 1200px;
+           
+        }
+        .out{
+        background-color: rgb(241, 7, 7,.08);
+        color: white;
+        float: left;
+        height: 34px;
+        width: 100px;
+        line-height: 34px;
+        font-size: 14px;
+        margin: 3px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: 700;
+        }
+    </style>
+</head>
+
+<body class="cl">
+    <div class="header cl ">
+        考勤子系统
+        <div class=header1>
+            <div class="work">我的考勤</div>
+           
+            <div class="relax">请假申请</div>
+            <button class="out">溜了</button>
+        </div>
+            
+    </div>
+
+    <div id="kinds">
+     标题：<input id="seaTitle" >
+    申请时间：<input id="start">
+    到<input id="end">
+     请假单状态：<input type="radio" name="now">待审批
+    <input type="radio" name="now">归档
+    <input type="radio" name="now">全部
+    <button id="searchAll">查询</button>
+    </div>
+
+    <button class="wanted">请假</button>
+    <div class="bigBox cl">
+    <ul class="firstUl">
+    <li class="li1">请假单</li>
+    <li class="li2">申请人</li>
+    <li class="li3">标题</li>
+    <li class="li4">起始时间</li>
+    <li class="li5">结束时间</li>
+    <li class="li6">申请时间</li>
+    <li class="li7">请假单状态</li>
+    <li class="li8"></li>
+    </ul>
+    <div class="list w">
+        <ul >
+<!-- <li class="li1">请假单</li>
+<li class="li2">申请人</li>
+<li class="li3">标题</li>
+<li class="li4">起始时间</li>
+<li class="li5">结束时间</li>
+<li class="li6">申请时间</li>
+<li class="li7">请假单状态</li>
+<li class="li8"></li> -->
+        <ul>
+    </div>
+</div>
+    <br/>
+    <div class="shadow">
+<div class="relaxReq"> 请假申请 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="closeone">关闭</button></div>
+        <div class="relaxReq2">
+        <div class="relaxMsg">请假信息 </div>
+
+            请假单号:&nbsp<input id="relaxNum">
+            申请人&nbsp&nbsp&nbsp&nbsp:<input id="relaxPeo">
+            <br/><br />
+            *标&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp题<input id="relaxTal"><br/> <br />
+            *开始时间<input id="relaxStr">
+            *结束时间<input id="relaxEnd"><br/><br/>
+            *请假原因<textarea id="relaxRea"></textarea><br/>
+            <button class="relaxYes">确定</button><button class="relaxNo">取消</button>
+        </div>
+    </div>
+    <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+    </select>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/datepicker.js"></script>
+
+<script>
+//js开始
+    $(".work").click(function () {
+$(location).attr('href','worklist.html')
+    });
+    $(".out").click(function(){
+        $(location).attr('href','login.html')
+    })
+
+$(".relaxYes").click(function () {
+    // $(".ul1").append("<li>"+$("#relaxNum").val()+"</li>");
+    // $(".ul2").append("<li>"+$("#relaxNum").val()+"</li>");
+    var html ="";
+    html +=
+    ` <ul >
+    <li class="li1">${$("#relaxNum").val()}</li>
+    <li class="li2">${$("#relaxPeo").val()}</li>
+    <li class="li3">${$("#relaxTal").val()}</li>
+    <li class="li4">${$("#relaxStr").val()}</li>
+    <li class="li5">${$("#relaxEnd").val()}</li>
+    <li class="li6">${$("#relaxRea").val()}</li>
+    <li class="li7"></li>
+        <li class="li8">查看</li>
+        <ul> `;
+            console.log("请假");
+    $(".firstUl").append(html);
+    $('.shadow').hide();
+    
+//输入的内容上传到数据库
+    $.ajax({
+        type:"get",
+        url:"..php/update.php",
+        data:{
+        qingjiadanID:$("#relaxNum").val(),
+        shenqingren:$("#relaxPeo").val(),
+        biaoti:$("#relaxTal").val(),
+        startTime:$("#relaxStr").val(),
+        endTime:$("#relaxEnd").val()
+        },
+        dataType: "json",
+    });
+
+});
+//数据库的第一次导入
+    var clickState = 0;
+      if( clickState == 1){
+                //如果状态为1就什么都不做
+            }else{
+                clickState = 1;  //如果状态不是1  则添加状态 1
+           
+     $.ajax({
+         type:"get",
+         url:"../php/worker.php",
+         success:function(list){
+            var  list = JSON.parse(list);
+             var html ="";
+             list.forEach(function(item){
+                 var {
+                    qingjiadanID,
+                    shenqingren,
+                    biaoti,
+                    startTime,
+                    endTime,
+                    shenqingTime,
+                    qingjiadanStatus
+                 }=item;
+                 switch(qingjiadanStatus*1){
+                     case 2:
+                     qingjiadanStatus="待审批";
+                     break;
+                     case 3:
+                     qingjiadanStatus="稳了";
+                     break;
+                 }
+                 html +=
+                 `<ul>
+            <li >${qingjiadanID}</li>
+            <li>${shenqingren}</li>
+            <li class="li3">${biaoti}</li>
+            <li class="li4">${startTime}</li>
+            <li class="li5">${endTime}</li>
+            <li class="li6">${shenqingTime}</li>
+            <li class="li7">${qingjiadanStatus}</li>
+            <li class="li8">查看</li>
+                    </ul> `;
+                    console.log("第一次");
+             });
+            //  $(".list").html("");
+            $(".list").append(html);
+         },
+});
+}
+// 搜索内容
+    
+    $("#searchAll").click(function(){
+        clickState = 1;
+    $(".list").html("");
+        $.ajax({
+            type:"get",
+        url:"../php/check.php",
+        data:{
+        biaoti: $("#seaTitle").val(),
+        startTime:$("#start").val(),
+        endTime:$("#end").val()
+        },
+        dataType:"json",
+        success:function(list){
+                // var list = JSON.parse(list);
+                var html = "";
+               list.forEach(function(item){
+                   var {
+                       qingjiadanID,
+                       shenqingren,
+                        biaoti,
+                        startTime,
+                        endTime,
+                        shenqingTime,
+                        qingjiadanStatus
+                   }=item;
+                                html  +=  `<ul>
+                    <li >${qingjiadanID}</li>
+                    <li>${shenqingren}</li>
+                    <li class="li3">${biaoti}</li>
+                    <li class="li4">${startTime}</li>
+                    <li class="li5">${endTime}</li>
+                    <li class="li6">${shenqingTime}</li>
+                    <li class="li7">${qingjiadanStatus}</li>
+                    <li class="li8">查看</li>
+                            </ul> `;
+                            console.log("搜索");
+                    $(".list").append(html);
+                    
+                        });
+                            }
+});
+})
+   
+    $(".wanted").click(function () {
+    $('.shadow').show();
+    });
+
+    $(".closeone").click(function () {
+    $('.shadow').hide();
+    });
+
+    new DatePicker("#start", {
+    date: "2019-3-01",
+    dateFormat: "yyyy-mm-dd"
+    });
+    new DatePicker("#end", {
+    date: "2019-3-01",
+    dateFormat: "yyyy-mm-dd"
+    });
+</script>
+
+</html>

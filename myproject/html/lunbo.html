@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #nav {
+  position: absolute;
+  height: 20px;
+  width: 200px;
+  left: 160px;
+  top: 240px;
+  background-color: rgba(22, 22, 22, 0.6);
+  border-radius: 10px; }
+  #nav li {
+    float: left;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: rgba(134, 33, 200, 0.6);
+    text-align: center;
+    line-height: 14px;
+    margin-left: 21.66667px;
+    margin-top: 3px; }
+  #nav li.select {
+    background-color: rgba(156, 66, 100, 0.8); }
+        #wrap3 {
+        height: 300px;
+        width: 760px;
+        margin: 50px auto;
+        overflow: hidden;
+        /* position: relative; */
+        }
+        #content3 {
+        /* height: 300px;
+        width: 760px; */
+        position: relative;
+        }
+        #content3 li img {
+        position: absolute;
+        height: 300px;
+        width: 760px;
+        left: -760px;
+        top: 0;
+        }
+        #content3 li {
+        position: absolute;
+        height: 300px;
+        width: 760px;
+        display: none;
+        }
+        #content3 .select {
+        display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap3">
+        <ul id="content3">
+            <li><img src="../images/1.jpg"></li>
+            <li><img src="../images/3.jpg"></li>
+            <li><img src="../images/2.jpg"></li>
+            <li><img src="../images/5.jpg"></li>
+        </ul>
+    </div>
+    <ul id="nav">
+        <li class="select">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+    var index =0;
+    var timer =null;
+    var length = $("#nav li").length;
+show(index);
+    function show(index) {
+        $("#nav li").eq(index).addClass("select").siblings().removeClass("select");
+
+$("#content3 li").eq(index).fadeIn(500, function () {
+    $(this).find("img").eq(0).animate({"left": 0}, function () {
+         $(this).next().animate({"left": 0});  });
+    }).siblings().fadeOut(function () {
+        $(this).find("img").css("left", -760);
+    });
+    }
+</script>
+</html>

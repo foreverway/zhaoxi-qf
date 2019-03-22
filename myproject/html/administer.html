@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/yonghuguanli.css">
+
+</head>
+
+<body>
+    <div class="top">
+        <ul class="top-right">
+            <li id="personnelinfo"><i class="info"></i><a><u>个人信息</u></a></li>
+            <li id="comeback"><i class="back"></i><a href="login.html"><u>退出</u></a></li>
+        </ul>
+
+        <ul class="nav tab">
+            <li class="part part1">
+                <input type="radio" name="r1" id="t1" hidden>
+                <label for="t1">用户管理</label>
+                <div class="hide">
+                    <div class="dqwz">用户管理</div>
+                    <div class="middle">
+                        <div class="middle-top"></div>
+                        <div class="title">
+                            <div class="select">
+                                用户ID：<input type="text" id="yonghuInp1">
+                                用户名：<input type="text" id="yonghuInp2">
+
+                                <span>部门：</span>
+                                <input type="radio" class="userType" value="" name="type"><span>全部</span>
+                                <input type="radio" class="userType" value="素质拓展部" name="type"><span>素质拓展部</span>
+                                <input type="radio" class="userType" value="实训中心" name="type"><span>实训中心</span>
+                                <input type="radio" class="userType" value="景宁人力" name="type"><span>景宁人力</span>
+                                <input type="radio" class="userType" value="督导部" name="type"><span>督导部</span>
+                                <input type="radio" class="userType" value="武软共建学院" name="type"><span>武软共建学院</span>
+                                <input type="radio" class="userType" value="后勤管理部" name="type"><span>后勤管理部</span>
+
+                                <button class="btn3" id="yonghuBtn-cx">查询</button>
+                            </div>
+                            <div class="detail detail1">
+                                <div class="btnall">
+                                    <button class="btnall1" id="yonghuBtn-tj">添加</button>
+                                 
+                                </div>
+                                <div class="container">
+                                    <ul class="row row1">
+                                        <li class="col-sm-1">序号</li>
+                                        <li class="col-sm-3 order1"><u>学员ID</u></li>
+                                        <li class="col-sm-3 order2"><u>学员名</u></li>
+                                        <li class="col-sm-3 order3"><u>所属部门</u></li>
+                                        <li class="col-sm-2">修改信息</li>
+                                    </ul>
+                                    <div id="list">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="part part2">
+                <input type="radio" name="r1" id="t2" hidden>
+                <label for="t2">部门管理</label>
+                <div class="hide">
+                    <div class="dqwz">部门管理</div>
+                    <div class="middle">
+                        <div class="middle-top"></div>
+                        <div class="title">
+                            <div class="select">
+                                部门名称：<input type="text">
+                                主管：<select name="" id="select-opt">
+                                    <option value="" label="请选择"></option>
+
+                                </select>
+                                <button class="btn3" id="zhuguanBtn">查询</button>
+                            </div>
+                            <div class="detail">
+                                <div class="detail detail2">
+                                    <div class="btnall">
+                                        <button class="btnall1 btnall1Btn" id="addtype">添加</button>
+                                    </div>
+                                    <div class="container">
+                                        <ul class="row row1">
+                                            <li class="col-sm-2">序号</li>
+                                            <li class="col-sm-4 order2"><u>部门名称</u></li>
+                                            <li class="col-sm-3 order3"><u>主管</u></li>
+                                            <li class="col-sm-3"> </li>
+                                        </ul>
+                                        <div id="list1">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="part part3">
+                <input type="radio" name="r1" id="t3" hidden checked>
+                <label for="t3">考勤设置</label>
+                <div class="hide">
+                    <div class="dqwz">考勤设置</div>
+                    <div class="middle">
+                        <div class="middle-top"></div>
+                        <div class="title">
+                            <div class="select">
+                                <select id="selectYear">
+                                    <option value="2019">2019</option>
+                                </select>
+                                <span>年</span>
+                                <select id="selectMonth">
+                                    <option value="">03</option>
+                                    <option value="01">04</option>
+                                    
+                                </select>
+                                <span>月</span>
+                                <button id="kaoqingBtn">显示</button>
+                                <button>保存</button>
+                            </div>
+                        </div>
+                        <div class="detail detail">
+                            <div class="container">
+                                <ul class="row row1">
+                                    <li class="col-sm-4">日期</li>
+                                    <li class="col-sm-5 order2"><u>星期</u></li>
+                                    <li class="col-sm-3 order3"><u>状态</u></li>
+                                </ul>
+                                <div id="list" class="list3">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="header">
+        <div class="location"><i class="local"></i>
+            <div class="dqwz">当前位置&nbsp;:&nbsp;</div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="local-user">
+            <span>当前用户 ：</span>
+            <span id="username"></span>
+        </div>
+        <div class="user-type">
+            <span>用户类型 ：</span>
+            <span id="usertype"></span>
+        </div>
+        <div class="system">协同办公管理平台——考勤子系统</div>
+    </div>
+
+
+    <div id="shadow"></div>
+
+    <div id="info">
+        <div class="info-a">
+            <div class="info-a1">
+                <i></i>
+                <span>个人信息</span>
+            </div>
+            <div class="info-a2"></div>
+        </div>
+        <div class="info-b">
+            <div><span>新密码：</span><input type="text" id="newpwd">
+                <p id="p1"><span class="tip tip1">密码错误</span><i></i></p>
+            </div>
+            <div><span>确认密码：</span><input type="text" id="cfmpwd">
+                <p id="p2"><span class="tip tip2"></span><i></i></p>
+            </div>
+            <div><span>手机：</span><input type="text" id="telphone">
+                <p id="p3"><span class="tip tip3"></span><i></i></p>
+            </div>
+            <button class="btn1 bttn">保存</button><button class="btn2 bttn">取消</button>
+        </div>
+    </div>
+
+
+
+    <!-- 部门添加跳出 -->
+    <div class="usermessage" id="addusertype">
+        <div class="userbox">
+            <div class="userbox-top">
+                <span>创建部门</span>
+                <i id="adduserexit"><img src="../images/end.png" alt=""></i>
+            </div>
+            <div class="userbox-con">
+                <p>部门名称: <input type="text" id="usertypepwd"></p>
+                <p>部门主管: <input type="text" id="usertypepwd2"></p>
+                <p>部门说明: <textarea name="" id=""></textarea></p>
+                <p><button id="creatusertype">保存</button><button id="usertypeout">取消</button></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 用户添加跳出 -->
+    <div class="usermessage" id="adduserone">
+        <div class="userbox">
+            <div class="userbox-top">
+                <span>新增用户</span>
+                <i id="useroneout"><img src="../images/end.png" alt=""></i>
+            </div>
+            <div class="userbox-con">
+
+                <p>用户姓名: <input type="text" id="useronename"></p>
+                <p>用户类型: <input type="text" id="useronetype"></p>
+                <p>所属部门: <input type="text" id="useronesec"></p>
+                <p><button id="adduseronebtn">保存</button><button class="useroneout2">取消</button></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 用户修改跳出 -->
+    <div class="usermessage" id="updateuserone">
+        <div class="userbox">
+            <div class="userbox-top">
+                <span>修改用户信息</span>
+                <i id="useroneout3"><img src="../images/end.png" alt=""></i>
+            </div>
+            <div class="userbox-con">
+
+                <p>用户姓名: <input type="text" id="updateuseronename"></p>
+                <p>用户类型: <input type="text" id="updateuseronetype"></p>
+                <p>所属部门: <input type="text" id="updateuseronesec"></p>
+                <p><button id="updateuseronebtn">修改</button><button class="useroneout2">取消</button></p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="../js/yemianbuju.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/cookie.js"></script>
+<script>
+
+
+    //部门管理
+    //添加部门  取消 保存主管部门信息
+    $("#addtype").on('click', function () {
+        $("#addusertype").show();
+    })
+    $("#adduserexit").on('click', function () {
+        $("#addusertype").hide();
+        $("#shadow").hide();
+    })
+  
+    $("#usertypeout").on('click', function () {
+        $("#addusertype").hide();
+        $("#shadow").hide();
+    })
+
+    $("#creatusertype").on('click', function () {
+        var usertypename = $("#usertypepwd").val();
+        var usertypeperson = $("#usertypepwd2").val();
+        $.ajax({
+            type: "get",
+            url: "../php/sectiontianjia.php",
+            data: {
+                usertypenames: usertypename,
+                usertypepersons: usertypeperson
+            },
+            dataType: "json",
+            success: function (item) {
+                $("#addusertype input").val("");
+                alert(item["msg"]);
+                $("#addusertype").hide();
+                $("#shadow").hide();
+                getData(username);
+            }
+        })
+    })
+
+
+    $("#zhuguanBtn").click(function () {
+        var username = $("#select-opt").val();
+        getData(username);      
+    })
+    getZhuGuan("")
+    function getZhuGuan(username) {
+        $.ajax({
+            type: "get",
+            url: "../php/sectionlist.php",
+            data: {
+                username: username
+            },
+            dataType: "json",
+            success: function (obj) {
+                var html2 = "";
+                $("#select-opt").append("");
+                for (var i = 0; i < obj.length; i++) {
+                    var userinfo = [];
+                    Object.assign(userinfo, obj[i]);
+
+                    html2 += `<option value="${userinfo["username"]}">${userinfo["username"]}</option>`
+                }
+                // $("#list1")[0].innerHTML = html;
+                $("#select-opt").append(html2);
+            }
+        })
+    }
+
+
+    getData(username);
+    function getData(username) {
+        $.ajax({
+            type: "get",
+            url: "../php/sectionlist.php",
+            data: {
+                username: username
+            },
+            dataType: "json",
+            success: function (obj) {
+                var html = "";
+                
+                for (var i = 0; i < obj.length; i++) {
+                    var userinfo = [];
+                    Object.assign(userinfo, obj[i]);
+                    html += ` <ul class="row row2">
+                             <li class="col-sm-2">${userinfo["id"]}</li>
+                             <li class="col-sm-4">${userinfo["section"]}</li>
+                             <li class="col-sm-3">${userinfo["username"]}</li>
+                             <li class="col-sm-3"><a><img src="../images/caozuo.png" alt=""></a>&nbsp;&nbsp;&nbsp;
+                             <span onclick="window.delUser('${userinfo["id"]}',this)">删除</span>
+                             </li>
+                           </ul>`
+                }
+                $("#list1")[0].innerHTML = html;
+            }
+        })
+    }
+
+
+
+    //用户管理
+    $("#yonghuBtn-tj").click(function () {
+        $("#adduserone").show();
+    })
+    $("#useroneout").on('click', function () {
+        $("#adduserone").hide();
+    })
+
+    $("#useroneout3").on('click', function () {
+        $("#updateuserone").hide();
+    })
+
+    $(".useroneout2").click(function () {
+        $("#adduserone").hide();
+        $("#updateuserone").hide();
+    })
+
+    $("#adduseronebtn").on('click', function () {
+        creatoneuser();
+        getData2(id, username, userType);
+
+    })
+
+
+
+    //用户添加
+    function creatoneuser() {
+
+        var uname = $("#useronename").val();
+        var utype = $("#useronetype").val();
+        var usection = $("#useronesec").val();
+        if (uname == "" || utype == "" || usection == "") {
+            alert("请填完整内容");
+            return false;
+        }
+        $.ajax({
+            type: "get",
+            url: "../php/userstianjia.php",
+            data: {
+                username: uname,
+                usertype: utype,
+                usersection: usection
+            },
+            dataType: "json",
+            success: function (result) {
+                if (result["code"] == 1) {
+                    $("#adduserone").hide();
+                    $("#useronename").val("");
+                    $("#useronetype").val("");
+                    $("#useronesec").val("");
+                    alert(result["msg"]);
+                }
+            }
+        })
+    }
+
+    var userType = "";
+    var username="";
+    $("#yonghuBtn-cx").click(function () {
+        id = $("#yonghuInp1").val();
+        username = $("#yonghuInp2").val();
+        for (var i = 0; i < $(".userType").length; i++) {
+            var item = $(".userType")[i];
+            if (item.checked) {
+                userType = item.value;
+            }
+        }
+        getData2(id, username, userType);
+    })
+    var id = $("#yonghuInp1").val();
+    getData2(id, username, userType)
+    function getData2(id, username, userType) {
+        $.ajax({
+            type: "get",
+            url: "../php/userslist.php",
+            data: {
+                username: username,
+                id: id,
+                section: userType
+            },
+            dataType: "json",
+            success: function (obj) {
+                var html = "";
+                for (var i = 0; i < obj.length; i++) {
+                    var userinfo = [];
+                    Object.assign(userinfo, obj[i]);
+                    var num = i + 1;
+                    html += `<ul class="row row2">
+                           <li class="col-sm-1">${num}</li>
+                           <li class="col-sm-3">${userinfo["id"]}</li>
+                           <li class="col-sm-3">${userinfo["username"]}</li>
+                           <li class="col-sm-3">${userinfo["section"]}</li>
+                           <li class="col-sm-2"><img src="../images/caozuo.png" alt="" onclick="userXg(${userinfo["id"]},'${userinfo["username"]}','${userinfo["type"]}','${userinfo["section"]}')">&nbsp;&nbsp;
+                            <span onclick="window.delUser('${userinfo["id"]}',this)">删除</span></li>
+                         </ul>`
+                }
+                $("#list")[0].innerHTML = html;
+            }
+        })
+    }
+
+
+    function userXg(id, username, usertype, section) {
+        $("#updateuseronename").val(username);
+        $("#updateuseronesec").val(section);
+        $("#updateuseronetype").val(usertype);
+        $("#updateuserone").show();
+        $("#updateuseronebtn").on('click', function () {
+            var puname=$("#updateuseronename").val();
+            var pusection=$("#updateuseronesec").val();
+            var putype=$("#updateuseronetype").val();
+
+            if (puname == "" || pusection == "" || putype == "") {
+                alert("请填完整内容");
+                return false;
+            }
+            $.ajax({
+                type: "get",
+                url: "../php/admin.updateuserinfo.php",
+                data: {
+                    id:id,
+                    username: puname,
+                    usertype: putype,
+                    usersection: pusection
+                },
+                dataType: "json",
+                success: function (result) {
+                    if (result["code"] == 1) {
+                        $("#updateuserone").hide();
+                        $("#updateuseronename").val("");
+                        $("#updateuseronetype").val("");
+                        $("#updateuseronesec").val("");
+                        alert(result["msg"]);
+                        window.location.reload();
+                    }
+                }
+            })
+        })
+    }
+
+    //考勤设置
+    $("#kaoqingBtn").click(function () {
+        $(".list3").html("");
+        keyTime = $("#selectYear").val() + "-" + $("#selectMonth").val();
+        getData3(keyTime);
+    })
+    var keyTime = $("#selectYear").val();
+    getData3(keyTime);
+    function getData3(keyTime) {
+        $.ajax({
+            type: "get",
+            url: "../php/checklist.php",
+            data: {
+                keyTime: keyTime
+            },
+            dataType: "json",
+            success: function (obj) {
+                var html5 = "";
+                for (var i = 0; i < obj.length; i++) {
+                    var userinfo = [];
+                    Object.assign(userinfo, obj[i]);
+
+                    var date = new Date(userinfo["datetime"]);
+                    var week = date.getDay();
+                    var bigWeek = ["日", "一", "二", "三", "四", "五", "六"][week];
+                    html5 += `<ul class="row row2">
+                                        <li class="col-sm-4">${userinfo["datetime"]}</li>
+                                        <li class="col-sm-5">星期${bigWeek}</li>
+                                        <li class="col-sm-3">
+                                            <select id="kaoqing-opt">
+                                                <option value="">${userinfo["status"]}</option>
+                                                <option value=默认"">默认</option>
+                                                <option value=上班"">上班</option>
+                                                <option value=休假"">休假</option>
+                                            </select>
+                                        </li>
+                        </ul>`
+                }
+                $(".list3").append(html5);
+            }
+        })
+    }
+
+    //删除
+    function delUser(userid, span) {
+        $.ajax({
+            type: "get",
+            url: "../php/gly.deluser.php",
+            data: {
+                id: userid
+            },
+            dataType: "json",
+            success: function (obj) {
+                if (obj["code"] == 1) {
+                    span.parentNode.parentNode.remove();
+                } else {
+                    alert(obj["msg"]);
+                }
+            },
+            error: function () {
+                $.error();
+            }
+        })
+    }
+
+</script>
+
+</html>
